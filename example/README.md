@@ -1,6 +1,6 @@
-# native_shutter_sound_example
+# native_camera_sound_example
 
-Demonstrates how to use the native_shutter_sound plugin.
+Demonstrates how to use the native_camera_sound plugin.
 
 ## Getting Started
 

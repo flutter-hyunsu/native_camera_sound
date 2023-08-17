@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:native_shutter_sound/native_shutter_sound.dart';
+import 'package:native_camera_sound/native_camera_sound.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,14 +24,30 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Native Shutter Sound'),
+          title: const Text('Native Camera Sound'),
         ),
         body: Center(
-          child: ElevatedButton(
-            onPressed: () {
-              NativeShutterSound.play();
-            },
-            child: const Text('Play Sound'),
+          child: Column(
+            children: [
+              ElevatedButton(
+                onPressed: () {
+                  NativeCameraSound.playShutter();
+                },
+                child: const Text('Play Shutter Sound'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  NativeCameraSound.playStartRecord();
+                },
+                child: const Text('Play Start Record Sound'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  NativeCameraSound.playStopRecord();
+                },
+                child: const Text('Play Stop Record Sound'),
+              ),
+            ],
           ),
         ),
       ),

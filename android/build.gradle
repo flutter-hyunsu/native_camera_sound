@@ -1,5 +1,5 @@
-group 'htmhell.native_shutter_sound.native_shutter_sound'
-version '1.0-SNAPSHOT'
+group 'io.github.bungabear.native_camera_sound'
+version '0.0.1'
 
 buildscript {
     ext.kotlin_version = '1.6.10'

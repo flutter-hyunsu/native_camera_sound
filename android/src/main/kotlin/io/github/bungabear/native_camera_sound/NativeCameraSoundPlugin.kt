@@ -1,4 +1,4 @@
-package htmhell.native_shutter_sound.native_shutter_sound
+package io.github.bungabear.native_camera_sound
 
 import android.media.MediaActionSound
 import androidx.annotation.NonNull
@@ -9,8 +9,8 @@ import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
 
 
-/** NativeShutterSoundPlugin */
-class NativeShutterSoundPlugin: FlutterPlugin, MethodCallHandler {
+/** NativeCameraSoundPlugin */
+class NativeCameraSoundPlugin: FlutterPlugin, MethodCallHandler {
   /// The MethodChannel that will the communication between Flutter and native Android
   ///
   /// This local reference serves to register the plugin with the Flutter Engine and unregister it
@@ -18,14 +18,23 @@ class NativeShutterSoundPlugin: FlutterPlugin, MethodCallHandler {
   private lateinit var channel : MethodChannel
 
   override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
-    channel = MethodChannel(flutterPluginBinding.binaryMessenger, "native_shutter_sound")
+    channel = MethodChannel(flutterPluginBinding.binaryMessenger, "native_camera_sound")
     channel.setMethodCallHandler(this)
   }
 
   override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
-    if (call.method == "play") {
+    // https://developer.android.com/reference/android/media/MediaActionSound
+    if (call.method == "playShutter") {
       val sound = MediaActionSound()
       sound.play(MediaActionSound.SHUTTER_CLICK)
+    }
+    else if(call.method == "playStartRecord") {
+      val sound = MediaActionSound()
+      sound.play(MediaActionSound.START_VIDEO_RECORDING)
+    }
+    else if(call.method == "playStopRecord") {
+      val sound = MediaActionSound()
+      sound.play(MediaActionSound.STOP_VIDEO_RECORDING)
     } else {
       result.notImplemented()
     }

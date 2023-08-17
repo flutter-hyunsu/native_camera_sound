@@ -1,3 +1,3 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="htmhell.native_shutter_sound.native_shutter_sound">
+  package="io.github.bungabear.native_camera_sound">
 </manifest>

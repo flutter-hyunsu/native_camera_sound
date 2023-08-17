@@ -1,4 +1,4 @@
 #import <Flutter/Flutter.h>
 
-@interface NativeShutterSoundPlugin : NSObject<FlutterPlugin>
+@interface NativeCameraSoundPlugin : NSObject<FlutterPlugin>
 @end
