@@ -1,6 +1,6 @@
 name: native_camera_sound
 description: Play Android iOS native camera sound effect.
-version: 0.0.2+1
+version: 0.0.3
 repository: https://github.com/Bungabear/native_camera_sound
 homepage: https://github.com/Bungabear/native_camera_sound
 
