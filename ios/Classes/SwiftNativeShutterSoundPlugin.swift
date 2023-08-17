@@ -11,7 +11,7 @@ public class SwiftNativeCameraSoundPlugin: NSObject, FlutterPlugin {
 
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
       // https://iphonedevwiki.net/index.php/AudioServices
-      if(call.method == "playShutterSound"){
+      if(call.method == "playShutter"){
         playSound(1108)
       }
       else if(call.method == "playStartRecord") {
@@ -22,7 +22,7 @@ public class SwiftNativeCameraSoundPlugin: NSObject, FlutterPlugin {
       }
   }
 
-  func playSound(soundId: UInt32) {
+  func playSound(_ soundId: UInt32) {
     if #available(iOS 9.0, *) {
         AudioServicesPlaySystemSoundWithCompletion(SystemSoundID(soundId), nil)
     } else {
