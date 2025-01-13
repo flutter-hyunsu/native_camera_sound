@@ -10,7 +10,8 @@ public class SwiftNativeCameraSoundPlugin: NSObject, FlutterPlugin {
   }
 
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
-      // https://iphonedevwiki.net/index.php/AudioServices
+      // https://iphonedevwiki.net/index.php/AudioServices -- 25.01.13 Unavailable
+      // https://zenn.dev/p_x9/articles/b615b8d17e7a70
       if(call.method == "playShutter"){
         playSound(1108)
       }
