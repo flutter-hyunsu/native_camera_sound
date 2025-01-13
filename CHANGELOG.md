@@ -1,4 +1,8 @@
 
+## 0.0.4
+
+* Add android namespace
+
 ## 0.0.3
 
 * Version change 0.0.2+1 to 0.0.3
